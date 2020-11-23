@@ -1,5 +1,6 @@
-# Inspired by 'Forecasting air quality time series using deep learning, AWMA'. Created regressional radom forest models and single layer feed-forward neural network models.
-# Use results displayed in the figures to select features with the highest importance, and re-run the LSTM for verification
+# 1). Inspired by 'Forecasting air quality time series using deep learning, AWMA'.
+# 2). This R script builds regressional radom forest models and single layer feed-forward neural network models.
+# 3). Use results in the figures to help selecting features with the higher importance, and re-run the actual LSTM model for validation.
 
 # Clear workspace
 rm(list = ls(all=TRUE))
@@ -39,7 +40,9 @@ RC = ncvar_get(met, "RC")
 CLDB = ncvar_get(met, "CLDB")
 WBAR = ncvar_get(met, "WBAR")
 
+# Select certain variables of possible 
 # Extract data from 3-dimensional tensors (Col, Row, Time), and concatenate them into 1-dimensional vectors
+# Only study an area of 10*10 griad to reduce the excution time. (Trade-off between speed and confidence)
 NO = as.vector(NO[(160:170), (62:72), (1:24)])
 NO2 = as.vector(NO2[(160:170), (62:72), (1:24)])
 PBL = as.vector(PBL[(160:170), (62:72), (1:24)])
