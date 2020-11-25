@@ -1,7 +1,8 @@
 # Machine Learning Air Quality
 
-This repo was created to document progresses made in the the CE 675 project: machine learning air quality prediction.
+This repository was created to document progresses made in the the CE 675 project: machine learning air quality prediction.
 
+Fig 1. *4-dimensional tensor structure*
 <p align="center">
   <img src="Images/Model_Structure_1.PNG">
 </p>
